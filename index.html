@@ -15,21 +15,29 @@
       <h1><a href="/">Restaurant Reviews</a></h1>
     </nav>
   </header>
-
+  <div class="filter-options">
+    <span class="filters">
+      <h2>Filter Results</h2>
+    </span>
+    <span class="filters">
+      <div class="drop-down">
+        <select id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()">
+          <option value="all">All Neighborhoods</option>
+        </select>
+      </div>
+      <div class="drop-down">
+        <select id="cuisines-select" name="cuisines" onchange="updateRestaurants()">
+          <option value="all">All Cuisines</option>
+        </select>
+      </div>
+    </span>
+  </div>
   <main id="maincontent">
     <section id="map-container">
       <div id="map"></div>
     </section>
     <section>
-      <div class="filter-options">
-        <h2>Filter Results</h2>
-        <select id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()">
-          <option value="all">All Neighborhoods</option>
-        </select>
-        <select id="cuisines-select" name="cuisines" onchange="updateRestaurants()">
-          <option value="all">All Cuisines</option>
-        </select>
-      </div>
+    <hr>
       <ul id="restaurants-list"></ul>
     </section>
   </main>
