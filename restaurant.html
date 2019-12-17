@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,14 +14,17 @@
 <body class="inside">
   <!-- Beginning header -->
   <header>
+    <a href="#restaurant-details" class="skip-link">Jump to Restaurant Information</a>
     <!-- Beginning nav -->
     <nav>
       <h1><a href="/">Restaurant Reviews</a></h1>
     </nav>
     <!-- Beginning breadcrumb -->
-    <ul id="breadcrumb" >
-      <li><a href="/">Home</a></li>
-    </ul>
+    <nav aria-label="breadcrumb">
+      <ul id="breadcrumb">
+        <li><a href="/">Home</a></li>
+      </ul>
+    </nav>
     <!-- End breadcrumb -->
     <!-- End nav -->
   </header>
@@ -29,22 +32,29 @@
 
   <!-- Beginning main -->
   <main id="maincontent">
-    <!-- Beginning map -->
-    <section id="map-container">
-      <div id="map"></div>
-    </section>
-    <!-- End map -->
     <!-- Beginning restaurant -->
-    <section id="restaurant-container">
-      <h1 id="restaurant-name"></h1>
+    <section id="restaurant-container" role="contentinfo" aria-label="restaurant information">
+      <h2 id="restaurant-name"></h2>
       <img id="restaurant-img">
       <p id="restaurant-cuisine"></p>
-      <p id="restaurant-address"></p>
-      <table id="restaurant-hours"></table>
+    </section>
+    <section id="restaurant-details">
+      <p id="restaurant-address" aria-labelledby="restaurant-address-label"></p>
+      <label id="restaurant-address-label">address</label>
+      <!-- Beginning map -->
+      <section id="map-container" aria-label="mapbox map" role="application">
+        <div id="map" aria-labelledby="map-container"></div>
+      </section>
+      <label id="map-aria-description" class="map-aria-description">map</label>
+      <!-- End map -->
+      <div class="restaurant-hours"></table>
+        <table id="restaurant-hours" aria-labelledby="restaurant-hours-label"></table>
+        <label id="restaurant-hours-label" class="restaurant-info-label">Restaurant Hours</label>
+      </div>
     </section>
     <!-- end restaurant -->
     <!-- Beginning reviews -->
-    <section id="reviews-container">
+    <section id="reviews-container" role="contentinfo" aria-label="restaurant reviews">
       <ul id="reviews-list"></ul>
     </section>
     <!-- End reviews -->
@@ -62,8 +72,7 @@
   <script type="text/javascript" src="js/dbhelper.js"></script>
   <!-- Main javascript file -->
   <script type="text/javascript" src="js/restaurant_info.js"></script>
-  <!-- Google Maps -->
- <!--  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_tKbW6A5pQ-eupxI56myUnHLqYCzOjKo&libraries=places&callback=initMap"></script> -->
+  <script src="js/register.js"></script>
   <!-- End scripts -->
 
 </body>
